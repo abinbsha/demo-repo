@@ -1,0 +1,30 @@
+<!-- This component consolidates functionality for viewing and updating patient profiles, as well as viewing the patient's avatar -->
+<template>
+	 <div if:true={showSpinner}>
+		<c-bi-pspb-common-spinner></c-bi-pspb-common-spinner>
+	 </div>
+	
+
+	<lightning-layout multiple-rows class="layoutColor pad">
+		<lightning-layout-item size="12" small-device-size="12" medium-device-size="4" large-device-size="4"
+			class="slds-p-top_xx-large slds-p-bottom_xx-large lightninglayA">
+			<!--Display the Avatar Navigation---->
+			<div class="custom-box1">
+				<c-bi-Pspb-Avatar-Navigation onload={handleComponentLoad}></c-bi-Pspb-Avatar-Navigation>
+			</div>
+		</lightning-layout-item>
+		<lightning-layout-item size="12" small-device-size="12" medium-device-size="8" large-device-size="8"
+			class="slds-p-top_xx-large slds-p-bottom_xx-large lightninglayC"> <!--Display the Patient's caregiver details---->
+			<div class="custom-box2">
+				<div>
+					<c-bi-Pspb-Add-Caregivers onload={handleComponentLoad}></c-bi-Pspb-Add-Caregivers>
+				</div>
+			</div>
+		</lightning-layout-item>
+	</lightning-layout>
+	<!-- Url Validation Common Component-->
+		<c-bi-pspb-common-url-validation 
+			final-part-of-url={finalPartOfUrl} onvaluechange={handleUrlChange}>
+    	</c-bi-pspb-common-url-validation>
+		<c-bi-pspb-common-analytics-tracker></c-bi-pspb-common-analytics-tracker>
+</template>

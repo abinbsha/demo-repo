@@ -1,0 +1,44 @@
+<!--This LWC is a design for Medical Information Enquiry main page which contains the consolidated components like Avatar and releavant Messages-->
+<template>
+	<template if:true={casePopup}>
+		<div class="check"><c-bi-pspb-common-popup toast-message={successMsg} onbuttonclick={ClosePopup}></c-bi-pspb-common-popup></div>
+	</template>	
+<template if:true={draftPopup}>
+	<div class="check"><c-bi-pspb-common-popup toast-message={successMessage} onbuttonclick={ClosePopup}></c-bi-pspb-common-popup></div>
+</template>
+	<div class="main">
+		<lightning-layout multiple-rows class="tabClass">
+			<lightning-layout-item size="12" small-device-size="12" medium-device-size="12" large-device-size="12">
+				<div class="tabsDiv pad">
+					<div class="grid-containerTabs">
+						<button onclick={openSupportCenter} class="anchorTextActive">{supportCenter}</button>
+						<button onclick={openMyCases} class="anchorText">{myCase}</button>
+					</div>
+				</div>
+			</lightning-layout-item>
+		</lightning-layout>
+		<lightning-layout multiple-rows class="layoutColor pad">
+			<lightning-layout-item size="12" small-device-size="12" medium-device-size="4" large-device-size="4"
+				class="slds-p-top_xx-large slds-p-bottom_xx-large lightning-Card1">
+				<div class="custom-box1">
+					<!-- Show avatar and message for supportcenter -->
+					<c-bi-Pspb-Avatar-Navigation avatar={avatarContent}></c-bi-Pspb-Avatar-Navigation>
+				</div>
+			</lightning-layout-item>
+			<lightning-layout-item size="12" small-device-size="12" medium-device-size="8" large-device-size="8"
+				class="slds-p-top_xx-large slds-p-bottom_xx-large lightning-Card">
+				<div class="custom-box2">
+					<div>
+						<!-- this is used for create a case from medical information enquire -->
+						<c-bi-Pspb-Medical-Informations-Enquiry
+						ondescriptionerror={handleDescriptionError} ></c-bi-Pspb-Medical-Informations-Enquiry>
+					</div>
+				</div>
+			</lightning-layout-item>
+		</lightning-layout>
+	</div>
+	<c-bi-pspb-common-analytics-tracker></c-bi-pspb-common-analytics-tracker>
+	<c-bi-pspb-common-url-validation 
+			final-part-of-url={finalPartOfUrl} onvaluechange={handleUrlChange}>
+    	</c-bi-pspb-common-url-validation>
+</template>

@@ -1,0 +1,239 @@
+<!-- This components using user body parts and intencity itchiness values store this lwc-->
+<template>
+	<div class="main">
+		<!-- Show the loading after react/unreact for few seconds -->
+		<div lwc:if={showSpinner}>
+			<c-bi-pspb-common-spinner></c-bi-pspb-common-spinner>
+		</div>
+		<template if:true={error}>
+			<p>{errorAllergyData}: {error}</p>
+		</template>
+		{allergyIntoleranceDatademo}
+
+
+		<div class="nodisplay" if:false={nodisplay}>
+
+			<lightning-layout multiple-rows class="navBar padding">
+				<lightning-layout-item size="12" small-device-size="12" medium-device-size="12" large-device-size="12">
+					<h2>{symptomTrackerLabel}</h2>
+					<div class="display-LogoLogin">
+						<div class="grid-containerNav">
+							<div>
+								<button class="logo-button" onclick={openhome}   onkeypress={openhome}><img src={navLogo} alt={navLogo} class="wiDheight"></button>
+
+							</div>
+							<div>
+
+								<div class="grid-containerPatientDetials">
+									<div class="grid-containerPatient">
+
+										<p class="paraStyle">{patientName}:</p>
+
+										<div class="grid-font">{userName}</div>
+									</div>
+									<div class="grid-containerPatient1">
+
+										<p class="paraStyle">{periodLabel}:</p>
+
+										<div class="grid-font">{monthName} {currentYear}</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</lightning-layout-item>
+			</lightning-layout>
+		</div>
+		<div class="symptom-date-time">
+			<div class="Symptomdata-rows">
+				<div class="Symptomdata-date">
+					<img src={calenderImg} class="calender-img" alt={alternateTextCalender}/>
+					<p class="Symptomdata-value"> <span class="span">{dateLabel}</span><br>{symptomDatapage}</p>
+				</div>
+				<div class="Symptomdata-GPp">
+					<img src={vectorImg} class="calender-img" alt={alternateTextVector} />
+					<p class="Symptomdata-value"><span class="span">{gppSymptomLabel}</span><br>{valueSymptom}</p>
+				</div>
+				{symptomdate}
+			</div>
+			<div class="slds-grid slds-wrap">
+				<div class="slds-col slds-size_1-of-1 slds-medium-size_12-of-12 slds-large-size_12-of-12">
+					<div class="whitett">
+						<div class="align">
+
+							<h1 class="head">{symptomsLabel}</h1>
+
+							<template if:true={allergyIntoleranceData}>
+								<ul class="symptoms-scroll">
+									<template for:each={allergyIntoleranceData} for:item="item">
+										<li key={item.Id} class="key">
+											<div class="primary-symptoms">
+												<div class="itchiness-page-primary">
+													<div>
+														<div>
+															<img alt={alternateTextItchiness}  if:true={item.itchness} src={itchnessImg}
+															class="list">
+															<img  alt={alternateTextRedness} if:true={item.redness} src={rednessImg}
+														class="list">
+															<img alt={alternateTextPustules} if:true={item.pustules} src={pustulesImg}
+														class="list">
+															<img alt={alternateTextFatigue} if:true={item.fatigue} src={fatigueImg}
+														class="list">
+															<img alt={alternateTextPain} if:true={item.pain} src={painImg}
+														class="list">
+															<img alt={alternateTextTemperature} if:true={item.temperature} src={temperatureImg}
+															class="list">
+
+															<img alt={alternateTextWorried}  if:true={item.sadImage} src={worried}
+														class="list">
+															<img alt={alternateTextSpeechless} if:true={item.speechless} src={speechless}
+														class="list">
+															<img alt={alternateTextHappy} if:true={item.happy} src={happy}
+														class="list">
+															<img alt={alternateTextSad} if:true={item.worried} src={sadImage}
+														class="list">
+															<img alt={alternateTextJoyful} if:true={item.joyfull} src={joyfull}
+														class="list">
+
+														</div>
+														<div class="Name">
+															<template if:true={item.BI_PSP_Intensity__c}>
+																{item.BI_PSP_Intensity__c} /10
+															</template>
+															<template if:true={item.BI_PSP_Temperature__c}>
+																{item.BI_PSP_Temperature__c}°C
+															</template>
+															<div>
+															</div>
+															<div if:true={item.BI_PSP_Mood__c}>{item.BI_PSP_Mood__c}
+															</div>
+															<template if:false={item.BI_PSP_Mood__c}>
+																<div class="careName">
+																	{item.BI_PSP_Symptoms__r.HealthCloudGA__CarePlanTemplate__r.Name}
+																</div>
+															</template>
+														</div>
+													</div>
+												</div>
+											</div>
+										</li>
+									</template>
+								</ul>
+							</template>
+							<template if:false={hasSymptoms}>
+								<h1 class="noRecords no-symptom">{noSymptomRecord}</h1>
+							</template>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+		<div class="Symptomdata-trigeer">
+			<div class="white">
+				<div class="align">
+
+
+					<hr class="hr">
+					<h1 class="head">{triggersLabel}</h1>
+					<template if:true={symptomRecordData}>
+						<ul class="ul">
+							<template for:each={symptomRecordData} for:item="word">
+								<li key={word}>
+									<button class="button">{word}</button>
+								</li>
+							</template>
+						</ul>
+					</template>
+					<template if:false={symptomRecordData}>
+						<h1 class="noRecords no-trigger">{noTriggerRecord}</h1>
+					</template>
+
+
+
+
+
+
+
+					<hr class="hr1">
+					<h1 class="head">{photoLabel}</h1>
+					<div class="symptom-record" if:true={hasImage}>
+							<div if:true={hasImage} class="image-container">
+								<template for:each={imageFiles} for:item="file" for:index="index">
+									<div key={file.url} class="image-file-set">
+										<!-- Display the image -->
+										<!-- <img src={file.url} alt={file.name} class="uploaded-image" /> -->
+										<template if:true={file.isPdf}>
+				<img src={pdfFile} alt={file.name} class="uploaded-pdf" />
+				<p class="pdf-name">{file.name}</p>
+			</template>
+			<!-- If the file is not a PDF (assume it's an image) -->
+			<template if:false={file.isPdf}>
+				<img src={file.url} alt={file.name} class="uploaded-image" />
+			</template>
+									</div>
+								</template>
+							</div>
+						</div>
+
+					<div if:false={hasImage}>
+						<h1 class="noRecords">{noPhotoRecord}</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<template if:true={showeditbtnShow}>
+			<div class="btnclass">
+				<p class="p1">{mistakeModifyOrDelete}</p>
+				<div class="btns"> <button onclick={navigateToSymptom} class="btn">{editLabel}</button>
+					<div>
+						<button class="btn" onclick={handleDeleteClick}>{deleteLabel}</button>
+					</div>
+				</div>
+			</div>
+			<template if:true={edit}>
+				<div class="modal-background">
+					<div class="modal-content">
+						<button class="close" onclick={closeEdit}>&times;</button>
+						<h3 class="lastedit">{editLastEntry}</h3>
+						<p class="edit">{sureEditEntry}</p>
+						<div class="confirm-btn-head">
+							<button class="confirm-btn-understand-1" onclick={lastedtirdate}>{yesLabel}</button>
+							<button class="confirm-btn-understand" onclick={closeEdit}>{noLabel}</button>
+						</div>
+					</div>
+				</div>
+			</template>
+			<template if:true={deleteButton}>
+				<div class="modal-background">
+					<div class="modal-content">
+						<button class="close" onclick={closedeletbtnadd}>&times;</button>
+						<h3 class="lastedit">{confirmDeletion}</h3>
+						<p class="edit">{sureDeleteEntry}</p>
+						<div class="confirm-btn-head">
+							<button class="confirm-btn-understand-1" onclick={handleDeleteBtn}>{yesLabel}</button>
+							<button class="confirm-btn-understand" onclick={closeEdit}>{noLabel}</button>
+						</div>
+					</div>
+				</div>
+			</template>
+			<template if:true={lastEdit}>
+				<div class="modal-background">
+					<div class="modal-content">
+						<button class="close" onclick={closeEdit}>&times;</button>
+						<h3 class="lastedit">{unableToEdit}</h3>
+						<p class="edit">{onlyLastEntryEdited}</p>
+						<div class="confirm-btn-head">
+							<button class="confirm-btn-understand-1" onclick={lastedtirdate}>{okLabel}</button>
+						</div>
+					</div>
+				</div>
+			</template>
+		</template>
+	</div>
+</template>

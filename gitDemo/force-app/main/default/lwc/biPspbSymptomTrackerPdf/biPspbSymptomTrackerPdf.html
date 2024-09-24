@@ -1,0 +1,593 @@
+<!-- This LWC is used UserSymptomTracker graph download in pdf - biPspbSymptomTrackerPdf -->
+<template>
+		
+	<div if:true={showSpinner}>
+		<c-bi-pspb-common-spinner></c-bi-pspb-common-spinner>
+	</div>
+	<div class="printDoc" id="printDoc">
+			
+		<lightning-layout multiple-rows class="navBar padding">
+			<lightning-layout-item size="12" small-device-size="12" medium-device-size="12" large-device-size="12">
+				<h2>Symptom Tracker</h2>
+				<div class="display-LogoLogin">
+					<div class="grid-containerNav">
+						<div>
+							<button class="logoButton" onclick={openhome}><img src={navLogo} alt="Logo" class="wiDheight"></button>
+						
+						</div>
+						
+						<div class="grid-containerPatientDetials">
+							<div class="grid-containerPatient">
+								
+									<p class="paraStyle">{patientName}:</p>
+								
+								<div class="grid-font">{userName}</div>
+							</div>
+							<div class="grid-containerPatient1">
+								
+									<p class="paraStyle">{periodLabel}:</p>
+								
+								<div class="grid-font">{monthName} {currentYear}</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</lightning-layout-item>
+		</lightning-layout>
+		<lightning-layout multiple-rows class="slds-m-top_xx-large slds-m-bottom_xx-large padding">
+			<lightning-layout-item size="12" small-device-size="12" medium-device-size="12" large-device-size="12">
+				<template if:true={showLine}>
+					<div class="pdf-data">
+					<div class="chart-container">
+						<div class="chart">
+					
+							<template for:each={bars} for:item="bar">								
+								<div key={bar.dates} data-item={bar.dates} class="bar" >
+								<img class="lineimg" src={verticalLine} alt={alternateTextVerticalLine}>
+									<div class="container-bottom">
+										<div class="label">
+											<div class="pad10"><a data-item={bar.dates}
+													>{monthValue} {bar.dates}</a></div>
+										</div>
+										<hr>
+										<div class="image-container">
+											<template for:each={bar.imageUrls} for:item="imageUrl">
+												<div class="pad10" key={imageUrl}>
+													<img src={imageUrl} alt={alternateTextBallIcon}
+														class="chart-image" />
+												</div>
+											</template>
+										</div>
+									</div>
+								</div>
+							</template>
+						
+						</div>
+					</div>
+<div class="slds-p-top_large grid-containerColorNotification slds-align_absolute-center centeralign primarystyle">
+						<div class="grid-containerinline">
+							<div class="height40"><img src={darkYellowEllipse} alt={alternateTextBallIcon} ></div>
+							<div>
+								<p class="FlexCircleCenter">{itchinessLabel}</p>
+							</div>
+						</div>
+						<div class="grid-containerinline">
+							<div class="height40"><img src={redEllipse} alt={alternateTextBallIcon}></div>
+							<div>
+								<p class="FlexCircleCenter">{rednessLabel}</p>
+							</div>
+						</div>
+						<div class="grid-containerinline">
+							<div class="height40"><img src={violetEllipse} alt={alternateTextBallIcon} ></div>
+							<div>
+								<p class="FlexCircleCenter">{painLabel}</p>
+							</div>
+						</div>
+						<div class="grid-containerinline">
+							<div class="height40"><img src={greenEllipse} alt={alternateTextBallIcon} ></div>
+							<div>
+								<p class="FlexCircleCenter">{pustulesLabel}</p>
+							</div>
+						</div>
+						<div class="grid-containerinline">
+							<div class="height40"><img src={blueEllipse} alt={alternateTextBallIcon} ></div>
+							<div>
+								<p class="FlexCircleCenter">{fatigueLabel}</p>
+							</div>
+						</div>
+						<div class="grid-containerinline">
+							<div class="height40"><img src={darkRedEllipse} alt={alternateTextBallIcon} ></div>
+							<div>
+								<p class="FlexCircleCenter">{temperatureLabel}</p>
+							</div>
+						</div>
+						<div class="grid-containerinline">
+							<div class="height40"><img src={yellowEllipse} alt={alternateTextBallIcon} ></div>
+							<div>
+								<p class="FlexCircleCenter">{moodLabel}</p>
+							</div>
+						</div>
+					</div>
+					</div>
+				</template>
+			</lightning-layout-item>
+			<lightning-layout-item size="12" small-device-size="12" medium-device-size="12" large-device-size="12">
+				<template for:each={dateWithAllery} for:item="bar">
+					<div class="centeralign primarysytle" key={bar.symptom}>
+						<c-bi-Pspb-Primary-Page-Symptom showeditbtn={showEditBtn} nodisplay={nodisplay}
+							symptomrecord={bar.symptom}></c-bi-Pspb-Primary-Page-Symptom>
+					</div>
+				</template>
+			
+				<template if:true={nextSeven}>
+					<lightning-layout multiple-rows class="navBar padding">
+			<lightning-layout-item size="12" small-device-size="12" medium-device-size="12" large-device-size="12">
+				<h2>Symptom Tracker</h2>
+				<div class="display-LogoLogin">
+					<div class="grid-containerNav">
+						<div>
+							<button class="logoButton" onclick={openhome}><img src={navLogo} alt="Logo" class="wiDheight"></button>
+						
+						</div>
+						
+						<div class="grid-containerPatientDetials">
+							<div class="grid-containerPatient">
+								
+									<p class="paraStyle">{patientName}:</p>
+								
+								<div class="grid-font">{userName}</div>
+							</div>
+							<div class="grid-containerPatient1">
+								
+									<p class="paraStyle">{periodLabel}:</p>
+								
+								<div class="grid-font">{monthName} {currentYear}</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</lightning-layout-item>
+		</lightning-layout>
+
+					<lightning-layout-item size="12" small-device-size="12" medium-device-size="12"
+						large-device-size="12">
+							<template if:true={showLine}>
+						<div class="chart-container">
+							<div class="chart">
+							
+								<template for:each={barsone} for:item="bar">
+									<div key={bar.dates} data-item={bar.dates} class="bar">
+										<img class="lineimg" src={verticalLine} alt={alternateTextVerticalLine}>
+										<div class="container-bottom">
+											<div class="label">
+												<div class="pad10"><a data-item={bar.dates}
+														>{monthValue} {bar.dates}</a></div>
+											</div>
+											<hr>
+											<div class="image-container">
+												<template for:each={bar.imageUrls} for:item="imageUrl">
+													<div class="pad10" key={imageUrl}>
+														<img src={imageUrl} alt={alternateTextBallIcon}
+															class="chart-image" />
+													</div>
+												</template>
+											</div>
+										</div>
+									</div>
+								</template>
+								
+							</div>
+						</div>
+							</template>
+					<div class="slds-p-top_large grid-containerColorNotification slds-align_absolute-center centeralign primarystyle">
+						<div class="grid-containerinline">
+							<div class="height40"><img src={darkYellowEllipse} alt={alternateTextBallIcon} ></div>
+							<div>
+								<p class="FlexCircleCenter">{itchinessLabel}</p>
+							</div>
+						</div>
+						<div class="grid-containerinline">
+							<div class="height40"><img src={redEllipse} alt={alternateTextBallIcon}></div>
+							<div>
+								<p class="FlexCircleCenter">{rednessLabel}</p>
+							</div>
+						</div>
+						<div class="grid-containerinline">
+							<div class="height40"><img src={violetEllipse} alt={alternateTextBallIcon} ></div>
+							<div>
+								<p class="FlexCircleCenter">{painLabel}</p>
+							</div>
+						</div>
+						<div class="grid-containerinline">
+							<div class="height40"><img src={greenEllipse} alt={alternateTextBallIcon}></div>
+							<div>
+								<p class="FlexCircleCenter">{pustulesLabel}</p>
+							</div>
+						</div>
+						<div class="grid-containerinline">
+							<div class="height40"><img src={blueEllipse} alt={alternateTextBallIcon} ></div>
+							<div>
+								<p class="FlexCircleCenter">{fatigueLabel}</p>
+							</div>
+						</div>
+						<div class="grid-containerinline">
+							<div class="height40"><img src={darkRedEllipse} alt={alternateTextBallIcon} ></div>
+							<div>
+								<p class="FlexCircleCenter">{temperatureLabel}</p>
+							</div>
+						</div>
+						<div class="grid-containerinline">
+							<div class="height40"><img src={yellowEllipse} alt={alternateTextBallIcon} ></div>
+							<div>
+								<p class="FlexCircleCenter">{moodLabel}</p>
+							</div>
+						</div>
+					</div>
+						
+					</lightning-layout-item>
+					<lightning-layout-item size="12" small-device-size="12" medium-device-size="12"
+						large-device-size="12">
+					</lightning-layout-item>
+					<template for:each={dateWithAlleryTwo} for:item="bar">
+						<div class="centeralign primarysytle" key={bar.symptom}>
+							<c-bi-Pspb-Primary-Page-Symptom showeditbtn={showEditBtn} nodisplay={nodisplay} symptomrecord={bar.symptom}>
+							</c-bi-Pspb-Primary-Page-Symptom>
+						</div>
+					</template>
+				</template>
+			
+				<template if:true={nextSevenOne}>
+					<lightning-layout multiple-rows class="navBar padding">
+			<lightning-layout-item size="12" small-device-size="12" medium-device-size="12" large-device-size="12">
+				<h2>Symptom Tracker</h2>
+				<div class="display-LogoLogin">
+					<div class="grid-containerNav">
+						<div>
+							<button class="logoButton" onclick={openhome}><img src={navLogo} alt="Logo" class="wiDheight"></button>
+						
+						</div>
+						
+						<div class="grid-containerPatientDetials">
+							<div class="grid-containerPatient">
+								
+									<p class="paraStyle">{patientName}:</p>
+								
+								<div class="grid-font">{userName}</div>
+							</div>
+							<div class="grid-containerPatient1">
+								
+									<p class="paraStyle">{periodLabel}:</p>
+								
+								<div class="grid-font">{monthName} {currentYear}</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</lightning-layout-item>
+		</lightning-layout>
+					<lightning-layout-item size="12" small-device-size="12" medium-device-size="12"
+						large-device-size="12">
+								<template if:true={showLine}>
+						<div class="chart-container">
+							<div class="chart">
+							
+								<template for:each={barsTwo} for:item="bar">
+									<div key={bar.dates} data-item={bar.dates} class="bar">
+										<img class="lineimg" src={verticalLine} alt={alternateTextVerticalLine}>
+										<div class="container-bottom">
+											<div class="label">
+												<div class="pad10"><a data-item={bar.dates}
+														>{monthValue} {bar.dates}</a></div>
+											</div>
+											<hr>
+											<div class="image-container">
+												<template for:each={bar.imageUrls} for:item="imageUrl">
+													<div class="pad10" key={imageUrl}>
+														<img src={imageUrl} alt={alternateTextBallIcon}
+															class="chart-image" />
+													</div>
+												</template>
+											</div>
+										</div>
+									</div>
+								</template>
+								<div class="showEnd">&#10095;</div>
+							</div>
+						</div>
+								</template>
+				<div class="slds-p-top_large grid-containerColorNotification slds-align_absolute-center centeralign primarystyle">
+						<div class="grid-containerinline">
+							<div class="height40"><img src={darkYellowEllipse} alt={alternateTextBallIcon} ></div>
+							<div>
+								<p class="FlexCircleCenter">{itchinessLabel}</p>
+							</div>
+						</div>
+						<div class="grid-containerinline">
+							<div class="height40"><img src={redEllipse} alt={alternateTextBallIcon}></div>
+							<div>
+								<p class="FlexCircleCenter">{rednessLabel}</p>
+							</div>
+						</div>
+						<div class="grid-containerinline">
+							<div class="height40"><img src={violetEllipse} alt={alternateTextBallIcon} ></div>
+							<div>
+								<p class="FlexCircleCenter">{painLabel}</p>
+							</div>
+						</div>
+						<div class="grid-containerinline">
+							<div class="height40"><img src={greenEllipse} alt={alternateTextBallIcon}></div>
+							<div>
+								<p class="FlexCircleCenter">{pustulesLabel}</p>
+							</div>
+						</div>
+						<div class="grid-containerinline">
+							<div class="height40"><img src={blueEllipse} alt={alternateTextBallIcon} ></div>
+							<div>
+								<p class="FlexCircleCenter">{fatigueLabel}</p>
+							</div>
+						</div>
+						<div class="grid-containerinline">
+							<div class="height40"><img src={darkRedEllipse} alt={alternateTextBallIcon} ></div>
+							<div>
+								<p class="FlexCircleCenter">{temperatureLabel}</p>
+							</div>
+						</div>
+						<div class="grid-containerinline">
+							<div class="height40"><img src={yellowEllipse} alt={alternateTextBallIcon} ></div>
+							<div>
+								<p class="FlexCircleCenter">{moodLabel}</p>
+							</div>
+						</div>
+					</div>
+					
+					</lightning-layout-item>
+					<lightning-layout-item size="12" small-device-size="12" medium-device-size="12"
+						large-device-size="12">
+					</lightning-layout-item>
+					<template for:each={dateWithAlleryThree} for:item="bar">
+						<div class="centeralign primarysytle" key={bar.symptom}>
+							<c-bi-Pspb-Primary-Page-Symptom showeditbtn={showEditBtn} nodisplay={nodisplay}  symptomrecord={bar.symptom}>
+							</c-bi-Pspb-Primary-Page-Symptom>
+						</div>
+					</template>
+				</template>
+			
+				<template if:true={nextSevenTwo}>
+					<lightning-layout multiple-rows class="navBar padding">
+			<lightning-layout-item size="12" small-device-size="12" medium-device-size="12" large-device-size="12">
+				<h2>Symptom Tracker</h2>
+				<div class="display-LogoLogin">
+					<div class="grid-containerNav">
+						<div>
+							<button class="logoButton" onclick={openhome}><img src={navLogo} alt="Logo" class="wiDheight"></button>
+						
+						</div>
+						
+						<div class="grid-containerPatientDetials">
+							<div class="grid-containerPatient">
+								
+									<p class="paraStyle">{patientName}:</p>
+								
+								<div class="grid-font">{userName}</div>
+							</div>
+							<div class="grid-containerPatient1">
+								
+									<p class="paraStyle">{periodLabel}:</p>
+								
+								<div class="grid-font">{monthName} {currentYear}</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</lightning-layout-item>
+		</lightning-layout>
+					<lightning-layout-item size="12" small-device-size="12" medium-device-size="12"
+						large-device-size="12">
+									<template if:true={showLine}>
+						<div class="chart-container">
+							<div class="chart">
+							
+								<template for:each={barsThree} for:item="bar">
+									<div key={bar.dates} data-item={bar.dates} class="bar">
+										<img class="lineimg" src={verticalLine} alt={alternateTextVerticalLine}>
+										<div class="container-bottom">
+											<div class="label">
+												<div class="pad10"><a data-item={bar.dates}
+														>{monthValue} {bar.dates}</a></div>
+											</div>
+											<hr>
+											<div class="image-container">
+												<template for:each={bar.imageUrls} for:item="imageUrl">
+													<div class="pad10" key={imageUrl}>
+														<img src={imageUrl} alt={alternateTextBallIcon}
+															class="chart-image" />
+													</div>
+												</template>
+											</div>
+										</div>
+									</div>
+								</template>
+								<div class="showEnd">&#10095;</div>
+							</div>
+						</div>
+									</template>
+					<div class="slds-p-top_large grid-containerColorNotification slds-align_absolute-center centeralign primarystyle">
+						<div class="grid-containerinline">
+							<div class="height40"><img src={darkYellowEllipse} alt={alternateTextBallIcon} ></div>
+							<div>
+								<p class="FlexCircleCenter">{itchinessLabel}</p>
+							</div>
+						</div>
+						<div class="grid-containerinline">
+							<div class="height40"><img src={redEllipse} alt={alternateTextBallIcon}></div>
+							<div>
+								<p class="FlexCircleCenter">{rednessLabel}</p>
+							</div>
+						</div>
+						<div class="grid-containerinline">
+							<div class="height40"><img src={violetEllipse} alt={alternateTextBallIcon} ></div>
+							<div>
+								<p class="FlexCircleCenter">{painLabel}</p>
+							</div>
+						</div>
+						<div class="grid-containerinline">
+							<div class="height40"><img src={greenEllipse} alt={alternateTextBallIcon}></div>
+							<div>
+								<p class="FlexCircleCenter">{pustulesLabel}</p>
+							</div>
+						</div>
+						<div class="grid-containerinline">
+							<div class="height40"><img src={blueEllipse} alt={alternateTextBallIcon} ></div>
+							<div>
+								<p class="FlexCircleCenter">{fatigueLabel}</p>
+							</div>
+						</div>
+						<div class="grid-containerinline">
+							<div class="height40"><img src={darkRedEllipse} alt={alternateTextBallIcon} ></div>
+							<div>
+								<p class="FlexCircleCenter">{temperatureLabel}</p>
+							</div>
+						</div>
+						<div class="grid-containerinline">
+							<div class="height40"><img src={yellowEllipse} alt={alternateTextBallIcon} ></div>
+							<div>
+								<p class="FlexCircleCenter">{moodLabel}</p>
+							</div>
+						</div>
+					</div>
+					</lightning-layout-item>
+					<lightning-layout-item size="12" small-device-size="12" medium-device-size="12"
+						large-device-size="12">
+					</lightning-layout-item>
+					<template for:each={dateWithAlleryFour} for:item="bar">
+						<div class="centeralign primarysytle" key={bar.symptom}>
+							<c-bi-Pspb-Primary-Page-Symptom showeditbtn={showEditBtn} nodisplay={nodisplay} symptomrecord={bar.symptom}>
+							</c-bi-Pspb-Primary-Page-Symptom>
+						</div>
+					</template>
+				</template>
+
+				<template if:true={nextSevenThree}>
+					<lightning-layout multiple-rows class="navBar padding">
+			<lightning-layout-item size="12" small-device-size="12" medium-device-size="12" large-device-size="12">
+				<h2>Symptom Tracker</h2>
+				<div class="display-LogoLogin">
+					<div class="grid-containerNav">
+						<div>
+							<button class="logoButton" onclick={openhome}><img src={navLogo} alt="Logo" class="wiDheight"></button>
+						
+						</div>
+						
+						<div class="grid-containerPatientDetials">
+							<div class="grid-containerPatient">
+								
+									<p class="paraStyle">{patientName}:</p>
+								
+								<div class="grid-font">{userName}</div>
+							</div>
+							<div class="grid-containerPatient1">
+								
+									<p class="paraStyle">{periodLabel}:</p>
+								
+								<div class="grid-font">{monthName} {currentYear}</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</lightning-layout-item>
+		</lightning-layout>
+					<lightning-layout-item size="12" small-device-size="12" medium-device-size="12"
+						large-device-size="12">
+									<template if:true={showLine}>
+						<div class="chart-container">
+							<div class="chart">
+					
+								<template for:each={barsFour} for:item="bar">
+									<div key={bar.dates} data-item={bar.dates} class="bar">
+										<img class="lineimg" src={verticalLine} alt={alternateTextVerticalLine}>
+										<div class="container-bottom">
+											<div class="label">
+												<div class="pad10"><a data-item={bar.dates}
+														>{monthValue} {bar.dates}</a></div>
+											</div>
+											<hr>
+											<div class="image-container">
+												<template for:each={bar.imageUrls} for:item="imageUrl">
+													<div class="pad10" key={imageUrl}>
+														<img src={imageUrl} alt={alternateTextBallIcon}
+															class="chart-image" />
+													</div>
+												</template>
+											</div>
+										</div>
+									</div>
+								</template>
+						
+							</div>
+						</div>
+								</template>
+								
+				<div class="slds-p-top_large grid-containerColorNotification slds-align_absolute-center centeralign primarystyle">
+						<div class="grid-containerinline">
+							<div class="height40"><img src={darkYellowEllipse} alt={alternateTextBallIcon} ></div>
+							<div>
+								<p class="FlexCircleCenter">{itchinessLabel}</p>
+							</div>
+						</div>
+						<div class="grid-containerinline">
+							<div class="height40"><img src={redEllipse} alt={alternateTextBallIcon}></div>
+							<div>
+								<p class="FlexCircleCenter">{rednessLabel}</p>
+							</div>
+						</div>
+						<div class="grid-containerinline">
+							<div class="height40"><img src={violetEllipse} alt={alternateTextBallIcon} ></div>
+							<div>
+								<p class="FlexCircleCenter">{painLabel}</p>
+							</div>
+						</div>
+						<div class="grid-containerinline">
+							<div class="height40"><img src={greenEllipse} alt={alternateTextBallIcon}></div>
+							<div>
+								<p class="FlexCircleCenter">{pustulesLabel}</p>
+							</div>
+						</div>
+						<div class="grid-containerinline">
+							<div class="height40"><img src={blueEllipse} alt={alternateTextBallIcon} ></div>
+							<div>
+								<p class="FlexCircleCenter">{fatigueLabel}</p>
+							</div>
+						</div>
+						<div class="grid-containerinline">
+							<div class="height40"><img src={darkRedEllipse} alt={alternateTextBallIcon} ></div>
+							<div>
+								<p class="FlexCircleCenter">{temperatureLabel}</p>
+							</div>
+						</div>
+						<div class="grid-containerinline">
+							<div class="height40"><img src={yellowEllipse} alt={alternateTextBallIcon} ></div>
+							<div>
+								<p class="FlexCircleCenter">{moodLabel}</p>
+							</div>
+						</div>
+					</div>
+					</lightning-layout-item>
+				
+					<lightning-layout-item size="12" small-device-size="12" medium-device-size="12"
+						large-device-size="12">
+					</lightning-layout-item>
+					<template for:each={dateWithAlleryFive} for:item="bar">
+						<div class="centeralign primarysytle" key={bar.symptom}>
+							<c-bi-Pspb-Primary-Page-Symptom showeditbtn={showEditBtn} nodisplay={nodisplay} symptomrecord={bar.symptom}>
+							</c-bi-Pspb-Primary-Page-Symptom>
+						</div>
+					</template>
+				</template>
+			</lightning-layout-item>
+		</lightning-layout>
+	</div>
+	<!-- Url Validation Common Component-->
+    <c-bi-pspb-common-url-validation 
+    final-part-of-url={finalPartOfUrl} onvaluechange={handleUrlChange}>
+    </c-bi-pspb-common-url-validation>
+</template>

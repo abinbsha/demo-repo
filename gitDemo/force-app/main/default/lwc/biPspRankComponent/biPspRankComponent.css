@@ -1,0 +1,87 @@
+.grid-container {
+display: grid;
+grid-template-columns: auto auto auto;
+}
+
+.date {
+text-align: center;
+color: #565173;
+font-weight: 800;
+font-size: 14px;
+height: 30px;
+}
+
+.main {
+width: 148px;
+height: 120px;
+}
+
+.level {
+text-align: center;
+color: #565173;
+font-weight: 800;
+font-size: 16px;
+margin-top: 10px;
+}
+
+.level1 {
+text-align: center;
+color: #565173;
+font-weight: 400;
+font-size: 16px;
+margin-top: 10px;
+}
+
+@media only screen and (min-width: 401px){
+    .level1{
+        text-align: left;
+        margin-left: 22%;
+    }
+
+    @media only screen and (min-width: 601px){
+        .level1{
+            text-align: center;
+            margin-left: 3%;
+        }
+    }
+
+    @media only screen and (min-width: 401px) and (max-width:450px){
+        .level{
+            margin-right: 18%;
+        }
+
+        .date{
+            margin-right: 18%;
+        }
+    }
+
+    @media only screen and (min-width: 450px) and (max-width:500px){
+        .level{
+            margin-right: 24%;
+        }
+
+        .date{
+            margin-right: 24%;
+        }
+    }
+
+    @media only screen and (min-width: 500px) and (max-width:550px){
+        .level{
+            margin-right: 34%;
+        }
+
+        .date{
+            margin-right: 34%;
+        }
+    }
+
+    @media only screen and (min-width: 550px) and (max-width:600px){
+        .level{
+            margin-right: 39%;
+        }
+
+        .date{
+            margin-right: 39%;
+        }
+    }
+}

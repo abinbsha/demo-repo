@@ -1,0 +1,1494 @@
+@font-face {
+  font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina01-Regular.woff")
+    format("woff");
+}
+
+@font-face {
+  font-family: "Eina-Light", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-Light.woff")
+    format("woff");
+}
+
+@font-face {
+  font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-SemiBold.woff")
+    format("woff");
+}
+
+@font-face {
+  font-family:  "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-Bold.woff")
+    format("woff");
+}
+
+.toastForDesktop{
+  display: block;
+}
+.toastForMblResponse{
+  display: none;
+}
+
+.total {
+  width: 100%;
+  display: flex;
+  background-color: #fbfaf5;
+  padding: 25px 5% 20px 5%;
+  gap: 75px;
+  padding-bottom: 80px;
+  min-height: 66vh;
+}
+
+.forMblresponse {
+  display: none;
+}
+
+.avatarno {
+  position: relative;
+  left: 90px;
+  margin-top: 20px;
+}
+
+.avatarcontentno {
+  width: 286px;
+  height: 120px;
+  background-color: #ecdca8;
+  margin-top: 20px;
+  color: #403a60;
+  border-radius: 8px;
+  padding: 10px;
+  margin-left: 17px;
+  font-size: 14px;
+  line-height: 20px;
+  font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.rightSide {
+  width: 100%;
+  position: relative;
+  right: 13px;
+  top: 17px;
+}
+
+.title {
+  color: #403a60;
+  font-size: 32px;
+  font-family:  "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  line-height: 44px;
+  width: 100%;
+}
+
+.divclass {
+  height: 80px;
+  border-bottom: 2px solid #dfdde1;
+  margin-top: 35px;
+}
+
+.avatarAndName {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.avatarButton{
+  border: none;
+  background: none;
+}
+
+.profileavatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 85%;
+  cursor: pointer;
+  background-color: white;
+}
+
+.name {
+  cursor: pointer;
+  font-size: 14px;
+  font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  border: none;
+  background: none;
+}
+
+
+.postimage {
+  margin-left: 36%;
+  margin-top: 7%;
+  width: 140px;
+  height: 120px;
+}
+
+.text {
+  font-size: 16px;
+  position: relative;
+  color: #403a60;
+  line-height: 28px;
+  text-align: center;
+  left: 10%;
+  margin-bottom: -50px;
+  top: 25px;
+  height: 210px;
+  width: 70%;
+  padding-right: 0px;
+  font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+
+.Following {
+  width: 109px;
+  height: 40px;
+  margin-top: 10px;
+  border-radius: 12px;
+  padding: 11px 26px 12px 22px;
+  color: white;
+  line-height: 16px;
+  position: relative;
+  border: #403a60 solid 1.5px;
+  background-color: #403a60;
+  font-size: 14px;
+  font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  float: right;
+  bottom: 55px;
+}
+
+.back {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.67);
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-container {
+  position: fixed;
+  top: 244px;
+  left: 50%;
+  height: 324px;
+  width: 672px;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.1);
+  background: #3f3f3d;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  padding: 32px 40px 32px 40px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  z-index: 2;
+}
+
+.profile {
+  width: 180px;
+  height: 44px;
+  font-family:  "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  font-size: 32px;
+  line-height: 44px;
+  position: relative;
+  bottom: 10px;
+}
+
+.times {
+  float: right;
+  font-size: 20px;
+  background: none;
+  border: none;
+  margin-top: -72px;
+  margin-right: -35px;
+  font-weight: 300;
+}
+
+.picname {
+  text-align: center;
+}
+
+.popavatar {
+  height: 100px;
+  width: auto;
+  border-radius: 40px;
+}
+
+.username {
+  height: 24px;
+  width: 100%;
+  font-size: 20px;
+  line-height: 24px;
+  font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  padding-top: 20px;
+}
+
+
+.popup2-container {
+  position: fixed;
+  top: 244px;
+  left: 50%;
+  height: 324px;
+  width: 672px;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.1);
+  background: #3f3f3d;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  padding: 45px 40px 32px 40px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  z-index: 2;
+}
+
+.popuptitle {
+  color: #403a60;
+  font-family:  "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  font-size: 32px;
+  line-height: 44px;
+  margin-top: -20px;
+  padding-bottom: 12px;
+}
+
+.popupcontent {
+  color: #2c333a;
+  font-size: 20px;
+  font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+
+.followno1 {
+  width: 68px;
+  height: 40px;
+  font-size: 14px;
+  line-height: 16px;
+  border-radius: 12px;
+  border: #403a60 solid 1.5px;
+  background-color: white;
+  color: #403a60;
+  padding: 10px 24px 30px 22px;
+  margin: 30px 34px 50px 420px;
+  font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.followyes1 {
+  width: 68px;
+  height: 40px;
+  border-radius: 12px;
+  border: none;
+  background-color: #403a60;
+  color: white;
+  padding: 10px 24px 30px 22px;
+  font-size: 14px;
+  line-height: 16px;
+  font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+
+.contentonly {
+  color: #2c333a;
+  font-size: 20px;
+  width: 100%;
+  font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.times2 {
+  float: right;
+  font-size: 20px;
+  background: none;
+  border: none;
+
+  position: relative;
+  bottom: 30px;
+  left: 20px;
+}
+
+.popupbuttonFollowing {
+  width: 109px;
+  font-size: 14px;
+  line-height: 16px;
+  height: 40px;
+  position: relative;
+  bottom: 5px;
+  border-radius: 12px;
+  padding: 11px 24px 12px 24px;
+  background-color: #403a60;
+  float: right;
+  border: #403a60 solid 1.5px;
+  margin: 55px 15px 11px 0px;
+  color: white;
+  font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+@media only screen and (min-device-width: 400px)   and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  @supports (-webkit-touch-callout: none) {
+    .times2{
+      left: 35px;
+    }
+  }
+}
+@media only screen and (min-device-width: 800px)   and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  @supports (-webkit-touch-callout: none) {
+    .times2{
+      left: 35px;
+    }
+  }
+}
+@media  (width <= 992px ){
+  .toastForDesktop{
+    position: relative;
+    bottom: 100px;
+    right: 40px;
+    width: 107%;
+}
+}
+@media only screen and (max-width: 400px) {
+  .toastForDesktop{
+    display: none;
+  }
+  .toastForMblResponse{
+    display: block;
+    position: relative;
+    width: 118%;
+    right: 44px;
+    bottom: 19px;
+}
+  .background {
+    background-color: #f6efd9;
+  }
+
+  .widthformbl {
+    width: 90%;
+  }
+
+
+  .total {
+    width: 100%;
+    flex-direction: column;
+    background-color: #fbfaf5;
+    position: relative;
+    gap: 0px;
+    padding-left: 40px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    padding-bottom: 10px;
+  }
+
+  .backgroundtop {
+    width: 128%;
+        position: relative;
+        background-color: #f6efd9;
+        bottom: 25px;
+        display: flex;
+        gap: 100px;
+        right: 18%;
+        padding-bottom: 10px;
+    }
+
+
+.avatarcontentno{
+  width: auto;
+  height: auto;
+  right: 8%;
+  position: relative;
+  bottom: 6px;
+  margin-left: 0px;
+}
+  .forMblresponse {
+    display: block;
+    background: linear-gradient(90deg, #6f511d 0%, #926b45 17.19%, #ecdca8 58.85%, #6f511d 100%);
+    width: 124%;
+    height: 4px;
+    position: relative;
+    right: 17%;
+    bottom: 25px;
+    margin: 0px;
+}
+.rightSide{
+top: 40px;
+}
+  .avatarno {
+    width: 64px;
+    height: 64px;
+    left: 39px;
+    margin-top: 30px;
+
+  }
+  .avatarcontentdis {
+    position: relative;
+    width: 98%;
+    bottom: 0px;
+    font-size: 12px;
+    display: flex;
+  }
+
+  .title {
+    color: #403a60;
+    font-size: 20px;
+    line-height: 44px;
+    position: relative;
+    right: 16px;
+    bottom: 60px;
+  }
+
+  .divclass {
+    position: relative;
+    bottom: 60px;
+    margin-top: 12px;
+    height: 79px;
+    width: 113%;
+    right: 6px;
+  }
+
+  .avatarAndName {
+    display: flex;
+    gap: 0px;
+    align-items: center;
+    position: relative;
+  }
+
+  .profileavatar {
+    width: 45px;
+    height: 37px;
+
+    background-color: white;
+  }
+
+  .name {
+    font-size: 12px;
+  }
+
+  .postimage {
+    margin-left: 31%;
+    position: relative;
+    bottom: 45px;
+    width: 140px;
+    height: 120px;
+  }
+  .Following {
+    width: 81px;
+    height: 38px;
+    font-size: 12px;
+    bottom: 14px;
+    padding: 0px;
+  }
+  .text {
+    font-size: 14px;
+    position: relative;
+    color: #403a60;
+    line-height: 28px;
+    width: 95%;
+    left: 9%;
+    text-align: center;
+    margin-bottom: 0px;
+    top: -27px;
+    font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  }
+
+  .popup-container {
+    position: fixed;
+    top: 244px;
+    left: 50%;
+    height: 285px;
+    width: 300px;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.1);
+    background: #3f3f3d;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    padding: 32px 40px 32px 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    z-index: 2;
+  }
+
+  .picname {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .popavatar {
+    height: 60px;
+    width: 50px;
+    margin-left: 0px;
+    margin-top: 0px;
+    position: relative;
+    bottom: 22px;
+    border-radius: 27px;
+  }
+
+  .username {
+    height: 24px;
+    font-size: 14px;
+    line-height: 24px;
+    font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    position: relative;
+    bottom: 27px;
+  }
+
+  .times {
+    float: right;
+    font-size: 20px;
+    background: none;
+    border: none;
+    margin-top: -63px;
+    margin-right: -35px;
+  }
+
+  .popup2-container {
+    height: 362px;
+    width: 296px;
+    padding: 36px 40px 32px 40px;
+  }
+
+  .popuptitle {
+    font-size: 24px;
+    position: relative;
+    margin-top: -14px;
+    right: 14px;
+    width: auto;
+    padding-bottom: 0px;
+  }
+  .times2{
+    left: 30px;
+  }
+  .profile {
+    width: 180px;
+    height: 44px;
+    font-size: 24px;
+    line-height: 44px;
+    position: relative;
+    bottom: 19px;
+    right: 11px;
+  }
+
+  .popupcontent {
+    font-size: 16px;
+    width: 105%;
+    position: relative;
+    right: 10px;
+    top: 10px;
+  }
+
+  .contentonly {
+    font-size: 14px;
+    width: 116%;
+    margin-bottom: 16px;
+    position: relative;
+    right: 10px;
+  }
+
+  .followno1 {
+    width: 240px;
+    height: 40px;
+    font-size: 14px;
+    line-height: 16px;
+    position: relative;
+    top: 34px;
+    right: 433px;
+    border-radius: 12px;
+    border: #403a60 solid 1.7px;
+    background-color: white;
+    color: #403a60;
+    font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  }
+
+
+
+  .followyes1 {
+    float: right;
+    font-size: 15px;
+    position: relative;
+    bottom: 115px;
+    width: 240px;
+    right: 22px;
+    border: none;
+    margin-bottom: 0px;
+    margin-right: -35px;
+    font-weight: 300;
+  }
+
+
+  .popupbuttonFollowing {
+    width: 109px;
+    font-size: 14px;
+    line-height: 16px;
+    height: 40px;
+    position: relative;
+    bottom: 5px;
+    border-radius: 12px;
+    padding: 11px 24px 12px 24px;
+    background-color: #403a60;
+    float: right;
+    border: #403a60 solid 1.5px;
+    margin: 23px 51px 0px 0px;
+    color: white;
+    font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  }
+}
+@media only screen and (min-width: 360px) and (max-width: 400px) {
+  .Following{
+    bottom: 45px;
+  }
+  .divclass{
+    bottom: 45px;
+    position: relative;
+    right: 25px;
+    height: 55px;
+}
+}
+@media only screen and (max-device-width: 400px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  @supports (-webkit-touch-callout: none) {
+    .popuptitle {
+      font-size: 21px; 
+    }
+    .times2{
+      left: 45px;
+    }
+  }
+}
+@media only screen and (min-width: 401px) and (max-width: 500px) {
+  .toastForDesktop{
+    display: none;
+  }
+  .toastForMblResponse{
+    display: block;
+    position: relative;
+    bottom: 38px;
+    right: 30px;
+    width: 117%;
+}
+
+  .total {
+    width: 100%;
+    display: flex;
+    background-color: #fbfaf5;
+    padding: 42px;
+    overflow: hidden;
+    gap: 0px;
+    flex-direction: column;
+  }
+
+
+  .contentonly {
+    font-size: 14px;
+    padding-bottom: 20px;
+    position: relative;
+    right: 4%;
+}
+  .rightSide{
+    top: 2px;
+    }
+  .backgroundtop {
+    width: 132%;
+    position: relative;
+    background-color: #f6efd9;
+    bottom: 43px;
+    display: flex;
+    gap: 100px;
+    right: 18%;
+    padding-bottom: 10px;
+}
+
+
+.avatarcontentno{
+  width: auto;
+  height: auto;
+  right: 8%;
+  position: relative;
+  bottom: 6px;
+}
+  .forMblresponse {
+    display: block;
+        background: linear-gradient(90deg, #6f511d 0%, #926b45 17.19%, #ecdca8 58.85%, #6f511d 100%);
+        width: 127%;
+        height: 4px;
+        position: relative;
+        right: 14%;
+        bottom: 44px;
+        margin: 0;
+    }
+
+  .avatarno {
+    width: 64px;
+    height: 64px;
+    left: 39px;
+  }
+
+
+  .popupbuttonFollowing {
+    margin: 55px -12px 11px 0px;
+  }
+
+  .popavatar {
+    border-radius: 40px;
+  }
+
+  .avatarcontentdis {
+    position: relative;
+    width: 97%;
+    font-size: 13px;
+  }
+
+  .times {
+      bottom: 20px;
+      left: 30px;
+    float: right;
+    font-size: 20px;
+    background: none;
+    border: none;
+    margin-top: -72px;
+    margin-right: -35px;
+    font-weight: 300;
+  }
+
+  .title {
+    color: #403a60;
+    font-size: 24px;
+    line-height: 44px;
+    width: 100%;
+    margin-top: -40px;
+    margin-left: -20px;
+  }
+
+  .divclass {
+    width: 116%;
+        right: 20px;
+        position: relative;
+        bottom: -10px;
+        margin-top: 19px;
+        border-bottom: 2px solid #dfdde1;
+  }
+
+  .avatarAndName {
+    gap: 1px;
+    left:10px;
+    position: relative;
+}
+
+  .postimage {
+    margin-left: 43%;
+    margin-top: 6%;
+  }
+  .Following {
+    width: 95px;
+    height: 40px;
+    margin-top: 10px;
+    border-radius: 12px;
+    padding: 10px 12px 12px 12px;
+    color: white;
+    line-height: 16px;
+    position: relative;
+    border: #403a60 solid 1.5px;
+    background-color: #403a60;
+    font-size: 14px;
+    font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    float: right;
+    bottom: 27px;
+}
+
+  .text {
+    font-size: 16px;
+    position: relative;
+    color: #403a60;
+    line-height: 28px;
+    text-align: center;
+    left: 18%;
+    top: 13px;
+    height: 210px;
+    width: 86%;
+    padding-right: 0px;
+    font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  }
+
+  .name {
+    font-size: 13px;
+  }
+
+  .popup-container {
+    width: 380px;
+  }
+
+
+  .popup2-container {
+    height: 362px;
+    width: 296px;
+    padding: 36px 25px 32px 40px;
+  }
+
+  .popuptitle {
+        font-size: 24px;
+        line-height: 44px;
+        padding-bottom: 0px;
+        right: 10px;
+        position: relative;
+        margin-top: -15px;
+    }
+
+  .popupcontent {
+    font-size: 16px;
+    width: 105%;
+    position: relative;
+    right: 10px;
+    top: 10px;
+    }
+
+  .followno1 {
+    width: 240px;
+    position: relative;
+    top: 34px;
+    right: 431px;
+  }
+
+  .followyes1 {
+    float: right;
+    font-size: 15px;
+    position: relative;
+    bottom: 115px;
+    width: 240px;
+    right: 22px;
+    margin-right: -21px;
+}
+}
+@media only screen and (min-width: 420px) and (max-width: 500px) {
+  .Following{
+    bottom: 55px;
+  }
+  .avatarAndName{
+    left: 0px;
+  }
+
+  
+}
+@media only screen and (min-width: 501px) and (max-width: 600px) {
+  
+  .toastForDesktop{
+    display: none;
+  }
+  .toastForMblResponse{
+    display: block;
+    background: linear-gradient(90deg, #6f511d 0%, #926b45 17.19%, #ecdca8 58.85%, #6f511d 100%);
+    width: 107%;
+    height: 4px;
+    position: relative;
+    right: 2%;
+    bottom: 85px;
+    margin: 0px;
+}
+  .total {
+    height: 100%;
+    overflow: hidden;
+    width: 104%;
+    flex-direction: column;
+    background-color: #fbfaf5;
+    position: relative;
+    right: 20px;
+    gap: 0px;
+  }
+
+  .backgroundtop {
+    width: 109%;
+    position: relative;
+    background-color: #f6efd9;
+    bottom: 25px;
+    display: flex;
+    gap: 100px;
+    right: 3%;
+    padding-bottom: 15px;
+}
+
+
+.avatarcontentno{
+  width: auto;
+  height: auto;
+  right: 6%;
+  position: relative;
+  bottom: 6px;
+}
+  .forMblresponse {
+    display: block;
+    background: linear-gradient(90deg, #6f511d 0%, #926b45 17.19%, #ecdca8 58.85%, #6f511d 100%);
+    width: 107%;
+    height: 4px;
+    position: relative;
+    right: 2%;
+    bottom: 58px;
+}
+
+  .avatarno {
+    width: 64px;
+    height: 64px;
+    left: 39px;
+  }
+
+  .avatarcontentdis {
+    width: auto;
+  }
+
+  .rightSide {
+    top: 52px;
+    right: 0px;
+    padding: 25px;
+  }
+
+  .title {
+    color: #403a60;
+    font-size: 30px;
+    line-height: 44px;
+    position: relative;
+    bottom: 160px;
+    right: 10px;
+  }
+.avatarAndName{
+  gap: 1px;
+}
+  .divclass {
+    width: 100%;
+    position: relative;
+    bottom: 160px;
+    margin-top: 25px;
+    border-bottom: 2px solid #dfdde1;
+  }
+
+  .postimage {
+    margin-left: 40%;
+    position: relative;
+    margin-top: -32%;
+  }
+
+  .text {
+    font-size: 16px;
+    position: relative;
+    color: #403a60;
+    line-height: 28px;
+    text-align: center;
+    left: 18%;
+    top: 13px;
+    height: 210px;
+    width: 70%;
+    padding-right: 0px;
+    font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  }
+
+  .popup-container {
+    position: fixed;
+    top: 244px;
+    left: 50%;
+    height: 285px;
+    width: 460px;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.1);
+    background: #3f3f3d;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    padding: 32px 40px 32px 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    z-index: 2;
+  }
+
+  .picname {
+    text-align: center;
+  }
+
+  .popavatar {
+    height: 75px;
+    width: 65px;
+  }
+
+  .times {
+    float: right;
+    font-size: 20px;
+    background: none;
+    border: none;
+    margin-top: -72px;
+    margin-right: -35px;
+    font-weight: 300;
+  }
+
+  .username {
+    height: 24px;
+    font-size: 20px;
+    line-height: 24px;
+    font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  }
+
+
+  .popup2-container {
+    height: 362px;
+        width: 296px;
+        padding: 36px 25px 32px 40px;
+    }
+
+  .popuptitle {
+    font-size: 24px;
+        line-height: 44px;
+        padding-bottom: 0px;
+        right: 10px;
+        position: relative;
+        margin-top: -15px;
+  }
+
+
+  .popupcontent {
+    font-size: 16px;
+        width: 105%;
+        position: relative;
+        right: 10px;
+        top: 10px;
+    }
+
+  .followno1 {
+    width: 240px;
+    position: relative;
+    top: 34px;
+    right: 431px;
+  }
+  .followyes1 {
+    float: right;
+    font-size: 15px;
+    position: relative;
+    bottom: 115px;
+    width: 240px;
+    right: 22px;
+    margin-right: -21px;
+}
+
+  .contentonly {
+    font-size: 14px;
+        padding-bottom: 20px;
+        position: relative;
+        right: 4%;
+    }
+
+  .popupbuttonFollowing {
+    width: 109px;
+    font-size: 14px;
+    line-height: 16px;
+    height: 40px;
+    position: relative;
+    bottom: 5px;
+    border-radius: 12px;
+    padding: 11px 24px 12px 24px;
+    background-color: #403a60;
+    float: right;
+    border: #403a60 solid 1.5px;
+    margin: 45px 0px 11px 97px;
+    color: white;
+    font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 680px) {
+  
+
+  .backgroundtop {
+    width: 54%;
+  }
+
+  .avatarno {
+    position: relative;
+    left: 40px;
+  }
+  .popuptitle{
+    padding-bottom: 0px;
+  }
+  .avatarcontentno {
+    width: 130%;
+    height: auto;
+    background-color: #ecdca8;
+    margin-top: 20px;
+    color: #403a60;
+    border-radius: 8px;
+    padding: 10px;
+    margin-left: -15px;
+    font-size: 14px;
+    line-height: 20px;
+    font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  }
+
+  .divclass {
+    height: 100px;
+    border-bottom: 2px solid #dfdde1;
+    margin-top: 35px;
+  }
+
+  .avatarAndName {
+    gap: 3px;
+  }
+
+  .postimage {
+    margin-left: 20%;
+    margin-top: 6%;
+  }
+  .Following {
+    bottom: 15px;
+  }
+  .popup-container {
+    width: 90%;
+  }
+
+  .popavatar {
+    height: 100px;
+    width: auto;
+  }
+
+  .username {
+    height: 24px;
+    width: 100%;
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+
+  .followno1 {
+    margin: 30px 34px 50px 292px;
+  }
+
+  .times {
+    float: right;
+    font-size: 20px;
+    background: none;
+    border: none;
+    margin-top: -62px;
+    margin-right: -28px;
+    font-weight: 300;
+  }
+
+  .popupcontent {
+    font-size: 18px;
+    margin-top: 17px;
+  }
+
+  .contentonly {
+    font-size: 18px;
+  }
+
+  .popup2-container {
+    top: 244px;
+    left: 50%;
+    height: 300px;
+    width: 91%;
+    padding: 45px 40px 32px 40px;
+  }
+
+  .popupbuttonFollowing {
+    margin-top: 55px;
+    margin-right: 0px;
+  }
+}
+
+@media only screen and (min-width: 681px) and (max-width: 767px) {
+  .total {
+    gap: 5px;
+  }
+
+  .divclass {
+    height: 100px;
+    border-bottom: 2px solid #dfdde1;
+    margin-top: 35px;
+  }
+
+  .backgroundtop {
+    width: 480px;
+  }
+
+  .forMblresponse {
+    display: none;
+  }
+
+  .avatarno {
+        left: 48px;
+    }
+
+  .avatarcontentno {
+    width: 85%;
+    height: auto;
+    background-color: #ecdca8;
+    color: #403a60;
+    border-radius: 8px;
+    position: relative;
+    right: 10%;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .postimage {
+    margin-left: 23%;
+    margin-top: 6%;
+  }
+  .Following {
+    bottom: 12px;
+  }
+  .back {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .popup-container {
+    position: fixed;
+    top: 244px;
+    left: 50%;
+    height: 324px;
+    width: 600px;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.1);
+    background: #3f3f3d;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    padding: 32px 40px 32px 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    z-index: 2;
+  }
+
+  .profile {
+    width: 180px;
+    height: 44px;
+    font-family:  "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    font-size: 32px;
+    line-height: 44px;
+    position: relative;
+    bottom: 10px;
+  }
+
+  .times {
+    float: right;
+    font-size: 20px;
+    background: none;
+    border: none;
+    margin-top: -72px;
+    margin-right: -35px;
+    font-weight: 300;
+  }
+
+  .popavatar {
+    height: 100px;
+    width: auto;
+  }
+
+  .username {
+    height: 24px;
+    width: 100%;
+    font-size: 20px;
+    line-height: 24px;
+    font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  }
+
+  .popuptitle {
+    color: #403a60;
+    font-size: 32px;
+    line-height: 44px;
+    margin-top: -20px;
+  }
+
+  .popupcontent {
+    font-size: 20px;
+  }
+
+
+  .contentonly {
+    font-size: 20px;
+  }
+
+  .popupbuttonFollowing {
+    width: 109px;
+    font-size: 14px;
+    line-height: 16px;
+    height: 40px;
+    position: relative;
+    bottom: 5px;
+    border-radius: 12px;
+    padding: 11px 24px 12px 24px;
+    background-color: #403a60;
+    float: right;
+    border: #403a60 solid 1.5px;
+    margin: 55px 0px 11px 100px;
+    color: white;
+    font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  }
+}
+
+@media only screen and (min-width: 767px) and (max-width: 992px) {
+  .total {
+    gap: 30px;
+  }
+
+  .forMblresponse {
+    display: none;
+  }
+
+  .avatarno {
+    left: 35px;
+  }
+
+  .avatarcontentno {
+    height: auto;
+    width: 190px;
+    background-color: #ecdca8;
+    color: #403a60;
+    border-radius: 8px;
+    position: relative;
+    right: 8%;
+    font-size: 14px;
+    line-height: 20px;
+    font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  }
+
+  .postimage {
+    margin-left: 32%;
+  }
+
+  .back {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .popup-container {
+    position: fixed;
+    top: 244px;
+    left: 50%;
+    height: 324px;
+    width: 672px;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.1);
+    background: #3f3f3d;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    padding: 32px 40px 32px 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    z-index: 2;
+  }
+
+  .profile {
+    width: 180px;
+    height: 44px;
+    font-family:  "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    font-size: 32px;
+    line-height: 44px;
+    position: relative;
+    bottom: 10px;
+  }
+
+  .times {
+    float: right;
+    font-size: 20px;
+    background: none;
+    border: none;
+    margin-top: -60px;
+    margin-right: -35px;
+    font-weight: 300;
+  }
+
+  .popavatar {
+    height: 100px;
+    width: auto;
+    border-radius: 50px;
+  }
+
+  .username {
+    height: 24px;
+    width: 100%;
+    font-size: 20px;
+    line-height: 24px;
+    font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  }
+
+  .popup1-container {
+    position: fixed;
+    top: 244px;
+    left: 50%;
+    height: 324px;
+    width: 672px;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.1);
+    background: #3f3f3d;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    padding: 45px 40px 32px 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    z-index: 2;
+  }
+
+  .popuptitle {
+    color: #403a60;
+    font-size: 32px;
+    line-height: 44px;
+    margin-top: -20px;
+  }
+
+  .popupcontent {
+    font-size: 20px;
+  }
+
+
+
+  .popupbuttonFollowing {
+    width: 109px;
+    font-size: 14px;
+    line-height: 16px;
+    height: 40px;
+    position: relative;
+    bottom: 5px;
+    border-radius: 12px;
+    padding: 11px 24px 12px 24px;
+    background-color: #403a60;
+    float: right;
+    border: #403a60 solid 1.5px;
+    margin: 50px 10px 11px 100px;
+    color: white;
+    font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  }
+}
+
+@media only screen and (min-width: 1330px) and (max-width: 1920px) {
+  .text {
+    width: 600px;
+    left: 90px;
+  }
+
+  .postimage {
+    margin-left: 310px;
+  }
+}
+
+@media only screen and (min-width: 1400px) and (max-width: 1920px) {
+  .widthformbl {
+    margin-left: 15%;
+  }
+}
+@media only screen and (min-device-width: 801px) and (-webkit-min-device-pixel-ratio: 2) {
+  @supports (-webkit-touch-callout: none) {
+  .avatarAndName{
+    gap: 5px;
+  }
+  .toastForDesktop{
+    display: block;
+position: relative;
+bottom: 190px;
+right: 2%;
+width: 103%;
+  }
+  .times2{
+    left: 40px;
+    bottom: 35px;
+  }
+  .times{
+    margin-right: -44px;
+    margin-top: -68px;
+  }
+}
+}

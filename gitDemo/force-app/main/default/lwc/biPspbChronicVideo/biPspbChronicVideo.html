@@ -1,0 +1,104 @@
+<!--This lightning web component is used for display the chronic patient customized video-->
+<template>
+	<div class="target" data-scroll-target></div>
+	<div class="flexele">
+	<h1 class="heading">
+		{flarePreventionHeadingChronic}
+	</h1>
+	<div if:true={showContent}>
+		<c-bi-pspb-common-spinner></c-bi-pspb-common-spinner>
+	 </div>
+	<!--Display the video for desktop view-->
+	<div class="video-container">
+		<iframe class="responsive-iframe" src={videoUrl} height="511" width="100%"  allowfullscreen
+			title="Video Player">
+		</iframe>
+	</div>
+	<!--Display the video for mobile view-->
+	<div class="video-containermb">
+		<iframe class="responsive-iframe" src={videoUrl} height="190" width="auto" allowfullscreen
+			title="Video Player">
+		</iframe>
+	</div>
+
+	<div class="mbalign">
+		<hr />
+		<div class="transcript">
+			{transcript}
+			<lightning-icon class="vicon" icon-name={iconName} alternative-text={iconAltText} onclick={toggleContent} onkeypress={toggleContent}>
+			</lightning-icon>
+			<div class={contentClass}>
+				<!-- Taggled content -->
+				<p><!-- This is the content that can be toggled. --></p>
+			</div>
+		</div>
+		<hr />
+		<br />
+
+		<!--Display the vertical video player-->
+
+			
+		<div class ='vertical-player'>
+			<template for:each={standarItems} for:item="relatedItem">
+		<div class="videosreel"  key={relatedItem.Id} style = {relatedItem.thumbnail} >
+			<div class="videoContent">
+			<div class="videoHeading">
+				{relatedItem.text}
+			</div>
+			<div class="videoTimeAndPlay">
+				<div class="clock"> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<g clip-path="url(#clip0_490_7870)">
+					<path fill-rule="evenodd" clip-rule="evenodd" d="M12 1.71392C5.84978 1.71392 0.856745 6.70694 0.856745 12.8571C0.856745 19.0074 5.84978 24.0004 12 24.0004C18.1502 24.0004 23.1433 19.0074 23.1433 12.8571C23.1433 6.70694 18.1502 1.71392 12 1.71392ZM11.1428 12.4448L7.1784 15.6164C6.80896 15.9121 6.74895 16.4521 7.04468 16.8216C7.3404 17.191 7.88042 17.251 8.24987 16.9553L12.5357 13.5266C12.6395 13.4435 12.7183 13.3415 12.7723 13.2292L12.7732 13.2283C12.8272 13.116 12.8572 12.99 12.8572 12.8571V5.99977C12.8572 5.52661 12.4732 5.1426 12 5.1426C11.5268 5.1426 11.1428 5.52661 11.1428 5.99977V12.4448ZM3.67942 0.250723L0.250723 3.67941C-0.0835744 4.01371 -0.0835744 4.55715 0.250723 4.89145C0.585021 5.22575 1.12847 5.22575 1.46277 4.89145L4.89146 1.46276C5.22576 1.12847 5.22576 0.58502 4.89146 0.250723C4.55716 -0.0835742 4.01371 -0.0835742 3.67942 0.250723ZM19.1085 1.46276L22.5372 4.89145C22.8715 5.22575 23.415 5.22575 23.7493 4.89145C24.0836 4.55715 24.0836 4.01371 23.7493 3.67941L20.3206 0.250723C19.9863 -0.0835742 19.4428 -0.0835742 19.1085 0.250723C18.7742 0.58502 18.7742 1.12847 19.1085 1.46276Z" fill="#ECDCA8"/>
+					</g>
+					<defs>
+					<clipPath>
+					<rect width="24" height="24" fill="white"/>
+					</clipPath>
+					</defs>
+					</svg> <div class="mins">{relatedItem.duration} mins</div>
+					</div>
+					<div class="playBtn">
+					<svg data-id={relatedItem.id} onclick={changeVideo} onkeypress={changeVideo} width="62" height="60" viewBox="0 0 62 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<g opacity="0.8">
+						<rect width="62" height="60" rx="30" fill="#ECDCA8"/>
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M40 30L24 40L24 20L40 30Z" fill="#403A60"/>
+						</g>
+					</svg>
+					</div>					
+			</div>
+			</div>
+		</div>
+		</template>
+		</div>
+		<div class="prevNextBtn" if:true = {showPrevNext}>
+			<div class="prevBtn">
+				<svg onclick ={handlePrevClick} onkeypress={handleNextClick}  width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<rect width="32" height="32" rx="16" fill="#ECDCA8"/>
+					<path fill-rule="evenodd" clip-rule="evenodd" d="M20.5315 23.5115C20.8315 23.2115 21 22.8046 21 22.3803C21 21.9561 20.8315 21.5492 20.5315 21.2491L15.2627 15.9803L20.5315 10.7115C20.823 10.4098 20.9843 10.0056 20.9806 9.5861C20.977 9.16658 20.8087 8.76528 20.5121 8.46863C20.2154 8.17198 19.8141 8.00371 19.3946 8.00006C18.9751 7.99642 18.5709 8.15769 18.2691 8.44914L11.8691 14.8491C11.5692 15.1492 11.4007 15.5561 11.4007 15.9803C11.4007 16.4046 11.5692 16.8115 11.8691 17.1115L18.2691 23.5115C18.5692 23.8115 18.9761 23.98 19.4003 23.98C19.8246 23.98 20.2315 23.8115 20.5315 23.5115Z" fill="#403A60"/>
+					</svg>
+			</div>
+			<div class="nextBtn">
+				<svg onclick={handleNextClick} onkeypress={handleNextClick} width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<rect width="32" height="32" rx="16" fill="#ECDCA8"/>
+					<path fill-rule="evenodd" clip-rule="evenodd" d="M11.6696 23.5311C11.3697 23.231 11.2012 22.8241 11.2012 22.3999C11.2012 21.9756 11.3697 21.5687 11.6696 21.2687L16.9384 15.9999L11.6696 10.7311C11.3782 10.4293 11.2169 10.0251 11.2206 9.60563C11.2242 9.18611 11.3925 8.78481 11.6891 8.48816C11.9858 8.19151 12.3871 8.02324 12.8066 8.01959C13.2261 8.01595 13.6303 8.17722 13.932 8.46867L20.332 14.8687C20.632 15.1687 20.8005 15.5756 20.8005 15.9999C20.8005 16.4241 20.632 16.831 20.332 17.1311L13.932 23.5311C13.632 23.831 13.2251 23.9995 12.8008 23.9995C12.3766 23.9995 11.9697 23.831 11.6696 23.5311Z" fill="#403A60"/>
+					</svg>
+			</div>
+		</div>
+		<div class="videosreelmb">
+			<iframe class="responsive-iframe1" src={videoUrl} height="485" width="auto"  allowfullscreen
+				title="Video Player">
+			</iframe>
+		</div>
+		<br />
+
+		<h2 class="disclaimer">{disclaimer}</h2>
+		<br />
+
+		<div class="messagedisclaimer">
+			<p>
+				{disclaimerMessageChronic}	
+			</p>
+		</div>
+	</div>
+	</div>
+</template>
